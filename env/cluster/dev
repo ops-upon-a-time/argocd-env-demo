@@ -1,0 +1,34 @@
+cluster: cloudplex-dev-apne2-eks-0fffq
+cluster_env: dev
+
+aws_account_id: '111122223333'
+aws_region: ap-northeast-2
+
+argocd:
+  acm_arn: arn:aws:acm:ap-northeast-2:111122223333:certificate/abcde
+  hostname: argocd.demo.mzcdevops.com
+  github:
+    org: ops-upon-a-time
+    team: devops
+
+grafana:
+  hostname: grafana.demo.mzcdevops.com
+  auth:
+    github:
+      enabled: true
+      allowed_organizations: opspresso
+    google:
+      enabled: false
+      allowed_domains: mzcdevops.com cloudplex.com
+    keycloak:
+      enabled: false
+      hostname: keycloak.demo.mzcdevops.com
+      realm: demo
+  datasource:
+    demo: http://prom.in.demo.mzcdevops.com
+    demo-a: http://prom.in.demo-a.mzcdevops.com
+    demo-b: http://prom.in.demo-b.mzcdevops.com
+    loki: http://loki.in.demo.mzcdevops.com
+
+loki:
+  hostname: loki.in.demo.mzcdevops.com
